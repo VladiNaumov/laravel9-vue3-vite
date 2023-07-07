@@ -2,7 +2,7 @@ import {createApp} from 'vue'
 import App from './src/App.vue'
 import './bootstrap';
 import '../sass/app.scss'
-import * as bootstrap from 'bootstrap'
+
 
 
 
