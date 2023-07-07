@@ -7,7 +7,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    @vite(['resources/bootstrap/bootstrap.min.css', 'resources/bootstrap/bootstrap.bundle.min.js', 'resources/js/src/main.js'])
+    @vite(['resources/bootstrap/bootstrap.min.css', 'resources/bootstrap/bootstrap.bundle.min.js'])
+
+    @vite(['resources/js/src/main.js'])
+
+    <!--
+    @vite(['resources/sass/app.scss'])
+    -->
 
 </head>
 

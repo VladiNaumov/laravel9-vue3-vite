@@ -7,8 +7,8 @@ export default defineConfig({
         vuePlugin(),
         laravel({
             input: [
-                'resources/sass/app.scss',
-                'resources/js/src/app.js',
+                 'resources/sass/app.scss',
+                 'resources/js/src/app.js',
             ],
             refresh: true,
         }),
