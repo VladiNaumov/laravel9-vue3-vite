@@ -1,0 +1,89 @@
+1. установка LARAVEL
+composer create-project laravel/laravel:^9.0 example-app
+composer create-project --prefer-dist laravel/laravel ./
+composer create-project --prefer-dist laravel/laravel blog
+composer install // если нет папки VENDOR или не установлены какие нибудь зависимости
+composer update //обновление пакетов
+
+composer remove dompdf/dompdf
+нужные зависимости прописаны в файле composer.json
+
+- установка Vue3.js
+npm install
+npm install vue@next vue-loader@next
+npm i @vitejs/plugin-vue
+
+- установка bootstrap
+composer require laravel/ui
+php artisan ui bootstrap
+npm install
+
+npm run dev
+
+INFO: https://techvblogs.com/blog/how-to-install-vue-3-in-laravel-9-with-vite
+
+2. создать файл .htaccess и положить его в корневой каталог проекта
+-------------.htaccess----------------
+RewriteEngine On
+RewriteRule (.*) public/§1
+
+3. создать BD migration
+php artisan make:model clint -mf  (factory Create a new factory for the model)
+
+4. применение BD migration
+php artisan migrate
+
+5. создание контроллеров
+-----Controllers-------------
+php artisan make:controller Api/DeskController --api
+
+6. создание маршрутов routes/web.php
+
+7. Laravel Resources. (выбор нужных полей с для показа на frontend )
+php artisan make:resource DeskResource
+php artisan make:resource DeskListResource
+
+8. Определение отношений (oдин к одному,oдин ко многим) Models/Desk.php
+
+9. Добавление данных и валидация
+php artisan make:request DeskStoreRequest
+
+10. работа с frontend vue3
+- npm install vue-router@4
+- создание файла конфигурации router.js и подключение его в main.js
+
+11.
+
+
+----------cd/-----------------
+cd domains/demo.site
+cd E:\OSPanel\domains\laravel9-vue3-vite
+
+------------BD migration---------------
+php artisan migrate
+php artisan migrate:reset
+php artisan migrate:refresh
+php artisan make:model clint -mf  (factory Create a new factory for the model)
+php artisan migrate:refresh --path=database/migrations/2023_05_15_124917_creat_tilaussopimus_table.php
+
+----просмотр всех  route-----
+php artisan route:list
+
+------ storage:link----------
+php artisan storage:link
+
+-------ORM Laravel--------------
+recommendation (suositus) получение данных с бд
+Client::get();
+
+Узнать какие запросы были выполнены
+->toSql();
+
+обновлены данных
+Cient::find(1)-> update([
+'name' => 'Nikola'
+]);
+
+удаление элементов с бд
+Cient::find(1)->delete();
+User::find($id)->only('name', 'email');
