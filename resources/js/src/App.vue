@@ -4,8 +4,8 @@
    <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
          <div class="navbar-nav">
-            <router-link class="nav-link" to="/">HOME</router-link>
-            <router-link class="nav-link" to="/desks">DESKS</router-link>
+            <router-link class="nav-link" :to="{name:'home'}">HOME</router-link>
+            <router-link class="nav-link" :to="{name:'desks'}">DESKS</router-link>
          </div>
       </div>
 
@@ -24,6 +24,7 @@
 import AppHome from './components/Home.vue';
 import AppBody from './components/Body.vue';
 import AppAbout from './components/About.vue';
+import ShowDesk from "@/src/components/Desks/ShowDesk.vue";
 
 export default {
    data() {
@@ -33,7 +34,7 @@ export default {
       }
    },
 
-   components: {AppHome, AppBody, AppAbout}
+   components: {ShowDesk, AppHome, AppBody, AppAbout}
 }
 
 </script>
