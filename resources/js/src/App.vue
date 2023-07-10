@@ -1,36 +1,39 @@
 <!-- это главный компонент:  -->
 
 <template>
-    <div class="container">
+   <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+         <div class="navbar-nav">
+            <router-link class="nav-link" :to="{name:'home'}">HOME</router-link>
+            <router-link class="nav-link" :to="{name:'desks'}">DESKS</router-link>
+         </div>
+      </div>
 
-        <p>
-            <router-link to="/">Home</router-link>
-            <router-link to="/about">About</router-link>
-            <router-link to="/body">Body</router-link>
-        </p>
+   </nav>
+   <div>
 
-        <router-view></router-view>
+      <router-view></router-view>
 
+   </div>
 
-    </div>
 
 </template>
 
 
 <script>
-import AppHome from './components/Home.vue';
-import AppBody from './components/Body.vue';
-import AppAbout from './components/About.vue';
+import Home from './components/Home.vue';
+import Body from './components/Body.vue';
+import About from './components/About.vue';
 
 export default {
-    data() {
-        return {
-            title: "App",
+   data() {
+      return {
+         title: "App",
 
-        }
-    },
+      }
+   },
 
-    components: {AppHome, AppBody, AppAbout}
+   components: {Home, Body, About}
 }
 
 </script>

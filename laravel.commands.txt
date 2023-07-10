@@ -1,26 +1,29 @@
-1. установка LARAVEL
+1. -Install LARAVEL
 composer create-project laravel/laravel:^9.0 example-app
 composer create-project --prefer-dist laravel/laravel ./
 composer create-project --prefer-dist laravel/laravel blog
-composer install // если нет папки VENDOR или не установлены какие нибудь зависимости
-composer update //обновление пакетов
 
-composer remove dompdf/dompdf
-нужные зависимости прописаны в файле composer.json
-
-- установка Vue3.js
+2. -Install NPM Dependencies
 npm install
-npm install vue@next vue-loader@next
-npm i @vitejs/plugin-vue
 
-- установка bootstrap
+3. -Install Vue 3
+npm install vue@next vue-loader@next
+
+4. -Install vitejs/plugin-vue plugin
+npm install @vitejs/plugin-vue
+
+5. -установка bootstrap
 composer require laravel/ui
 php artisan ui bootstrap
 npm install
 
+-пример конфигурации файла vite.config.js
+INFO: https://techvblogs.com/blog/how-to-install-vue-3-in-laravel-9-with-vite
+
+- Vite Dev Server Start
 npm run dev
 
-INFO: https://techvblogs.com/blog/how-to-install-vue-3-in-laravel-9-with-vite
+
 
 2. создать файл .htaccess и положить его в корневой каталог проекта
 -------------.htaccess----------------
@@ -52,8 +55,11 @@ php artisan make:request DeskStoreRequest
 - npm install vue-router@4
 - создание файла конфигурации router.js и подключение его в main.js
 
-11.
-
+_________composer command________
+composer install // если нет папки VENDOR или не установлены какие нибудь зависимости
+composer update //обновление пакетов
+composer remove dompdf/dompdf
+нужные зависимости прописаны в файле composer.json
 
 ----------cd/-----------------
 cd domains/demo.site
