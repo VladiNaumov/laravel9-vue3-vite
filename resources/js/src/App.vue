@@ -21,10 +21,9 @@
 
 
 <script>
-import AppHome from './components/Home.vue';
-import AppBody from './components/Body.vue';
-import AppAbout from './components/About.vue';
-import ShowDesk from "@/src/components/Desks/ShowDesk.vue";
+import Home from './components/Home.vue';
+import Body from './components/Body.vue';
+import About from './components/About.vue';
 
 export default {
    data() {
@@ -34,7 +33,7 @@ export default {
       }
    },
 
-   components: {ShowDesk, AppHome, AppBody, AppAbout}
+   components: {Home, Body, About}
 }
 
 </script>
