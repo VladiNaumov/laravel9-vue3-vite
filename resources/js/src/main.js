@@ -3,6 +3,7 @@ import App from './App.vue'
 import store from './store.js'
 import router from './router.js'
 import axios from 'axios'
+import useVuelidate from "@vuelidate/core";
 
 axios.defaults.baseURL = 'http://laravel9-vue3-vite/api'
 
@@ -10,6 +11,7 @@ axios.defaults.baseURL = 'http://laravel9-vue3-vite/api'
 createApp(App)
    .use(router)
     .use(store)
+   .use(useVuelidate)
 
 .mount('#app')
 

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('desk_lists', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('desk_id')->constrained();
+            $table->foreignId('desk_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->timestamps();
         });
