@@ -2,8 +2,20 @@
    <div class="container">
       <h1>DESKS</h1>
 
-      <div class="row">
+      <form>
+         <div class="form-group">
+            <label class="form-label">Enter board names...</label>
+            <input type="text" v-model="name" class="form-control" placeholder="writede name">
+         </div>
+         <button type="button" class="btn btn-success mt-3" @click="addNewDesk">ADD</button>
+      </form>
 
+      <div class="alert alert-danger mt-3" role="alert" v-if="errored">
+         Data loading error! <br>
+         {{errors [0]}}
+      </div>
+
+      <div class="row">
          <div class="col-lg-4" v-for="desk in desks">
             <div class="card mt-3">
 
@@ -16,10 +28,6 @@
 
          </div>
 
-      </div>
-
-      <div class="alert alert-danger" role="alert" v-if="errored">
-         Data loading error!
       </div>
 
    </div>
@@ -35,10 +43,11 @@ export default {
       return {
          desks: [],
          errored: false,
+         errors:[],
       }
    },
    methods: {
-      getAllDesks(){
+      getAllDesks() {
          axios.get('/desks').then(response => {
             this.desks = response.data.data
          })
@@ -47,7 +56,7 @@ export default {
                this.errored = true
             })
             .finally(() => {
-
+               this.errored = false
             })
       },
       deleteDesk(id) {
@@ -66,6 +75,25 @@ export default {
 
                })
          }
+      },
+      addNewDesk() {
+         axios.post('/desks', {
+            name: this.name,
+         })
+            .then(response => {
+               this.name = ''
+               this.desks = []
+               this.getAllDesks()
+            })
+            .catch(error => {
+               console.log(error)
+               this.errors = []
+               this.errors.push( error.response.data.errors.name[0])
+               this.errored = true
+            })
+            .finally(() => {
+
+            })
       }
    },
    mounted() {
