@@ -44,6 +44,7 @@ export default {
          desks: [],
          errored: false,
          errors:[],
+         name:null,
       }
    },
    methods: {
