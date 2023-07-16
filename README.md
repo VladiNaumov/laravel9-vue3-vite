@@ -20,8 +20,8 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ## About the project
 
-- Laravel + VueJS. SPA. Аналог Trello. (Laravel 9 Vite + RestAPI + Vue3.js)
-- backend Laravel 9 Vite Rest Api
+- Laravel 9 Vite + RestAPI + Vue3.js)
+- backend Laravel 9 Vite RestApi
 - frontend Vue3.js SPA. CRUD Operations
 
 Routes:: 
