@@ -53,7 +53,7 @@ export default {
             this.desks = response.data.data
          })
             .catch(error => {
-               console.log(error)
+               console.log(error.response)
                this.errored = true
             })
             .finally(() => {
@@ -69,7 +69,7 @@ export default {
                this.getAllDesks()
             })
                .catch(error => {
-                  console.log(error)
+                  console.log(error.response)
                   this.errored = true
                })
                .finally(() => {
@@ -87,7 +87,7 @@ export default {
                this.getAllDesks()
             })
             .catch(error => {
-               console.log(error)
+               console.log(error.response)
                this.errors = []
                this.errors.push( error.response.data.errors.name[0])
                this.errored = true
