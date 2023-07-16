@@ -4,6 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property mixed $desks
+ */
 class DeskStoreRequest extends FormRequest
 {
     /**
@@ -24,7 +27,13 @@ class DeskStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255'
+            'name' => 'required|max:255|unique:desks,name,' //.$this->desks->id
         ];
+    }
+    public function messages()
+    {
+       return [
+          'name.unique' =>'name must be unique (имя должно быть уникальным)'
+       ];
     }
 }

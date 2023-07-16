@@ -21,6 +21,8 @@
 
 <script>
 import axios from 'axios';
+// TODO: сделать валидацию
+import {required, maxLength} from "@vuelidate/validators";
 
 export default {
 
@@ -56,6 +58,11 @@ export default {
             console.log(error)
             this.errored = true
          })
+   },
+   validations: {
+         name: {
+
+         }
    }
 
 }

@@ -22,8 +22,7 @@
 
 <script>
 import Home from './components/Home.vue';
-import Body from './components/Body.vue';
-import About from './components/About.vue';
+
 
 export default {
    data() {
@@ -33,7 +32,7 @@ export default {
       }
    },
 
-   components: {Home, Body, About}
+   components: {Home}
 }
 
 </script>
