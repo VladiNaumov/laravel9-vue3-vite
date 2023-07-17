@@ -25,6 +25,13 @@ Route::get('/examples', [ExamplesController::class, 'index'])->name('examples.in
 
 Route::get('/{any}', [AppController::class, 'index'])->where('any', '.*');
 
+/*
+Route::resources([
+   'desks' => DeskController::class,
+   //'posts' => PostController::class,
+]);
+*/
+
 
 
 
